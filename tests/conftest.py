@@ -21,7 +21,7 @@ def logger() -> logging.Logger:
 
 
 @pytest.fixture(scope='session')
-def run_appium_server():
+def run_appium_server(logger):
     subprocess.Popen(
         ['appium', '-a', '0.0.0.0', '-p', '4723', '--allow-insecure', 'adb_shell'],
         stdout=subprocess.DEVNULL,
@@ -34,7 +34,7 @@ def run_appium_server():
 
 
 @pytest.fixture(scope='session')
-def driver(run_appium_server) -> WebDriver:
+def driver(run_appium_server, logger) -> WebDriver:
     driver = webdriver.Remote('http://localhost:4723/wd/hub', android_get_desired_capabilities())
     logger.info("Create a new instance of the WebDriver.")
     yield driver

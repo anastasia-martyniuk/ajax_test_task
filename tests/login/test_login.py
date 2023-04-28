@@ -20,8 +20,8 @@ import pytest
             False
         ),
         pytest.param(
-            "",
-            "",
+            " ",
+            " ",
             False
         ),
         pytest.param(
