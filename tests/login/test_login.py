@@ -32,7 +32,7 @@ import pytest
     ],
 )
 def test_user_login(user_login_fixture, email: str, password: str, expected: bool, logger) -> None:
-    # logger.info(f"Testing log in function for user with next credentials: email - {email}, password - {password}.")
+    logger.info(f"Testing log in function for user with next credentials: email - {email}, password - {password}.")
     actual = user_login_fixture.log_in(email=email, password=password)
     assert actual == expected
-    # logger.info(f"Test user login passed: {actual}.")
+    logger.info(f"Test user login passed: {actual}.")

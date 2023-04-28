@@ -47,8 +47,3 @@ class LoginPage(Page):
         else:
             self.find_element(element_id="com.ajaxsystems:id/back").click()
             return False
-
-
-if __name__ == "__main__":
-    page = LoginPage(driver=webdriver.Remote('http://localhost:4723/wd/hub', android_get_desired_capabilities()))
-    page.log_in(email="qa.ajax.app.automation@gmail.com", password="password")

@@ -29,12 +29,12 @@ def run_appium_server():
         stdin=subprocess.DEVNULL,
         shell=True
     )
-    # logger.info("Appium REST http interface listener started on 0.0.0.0:4723")
+    logger.info("Appium REST http interface listener started on 0.0.0.0:4723")
     time.sleep(5)
 
 
 @pytest.fixture(scope='session')
 def driver(run_appium_server) -> WebDriver:
     driver = webdriver.Remote('http://localhost:4723/wd/hub', android_get_desired_capabilities())
-    # logger.info("Create a new instance of the WebDriver.")
+    logger.info("Create a new instance of the WebDriver.")
     yield driver

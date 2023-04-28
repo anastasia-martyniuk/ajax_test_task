@@ -20,8 +20,7 @@ def android_get_desired_capabilities():
         "resetKeyboard": True,
         "systemPort": 8306,
         "takesScreenshot": True,
-        # "udid": get_device_udid(),
-        "deviceName": "Pixel 4 API 33",
+        "udid": get_device_udid(),
         "appPackage": "com.ajaxsystems",
         "appActivity": "com.ajaxsystems.ui.activity.LauncherActivity",
     }
